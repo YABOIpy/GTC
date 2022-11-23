@@ -21,7 +21,7 @@ Token Joiner With GoRoutines And Works without Proxies
 all tested with 200-300 mpbs
 Speeds = {
 100 tokens = 0.27 seconds
-1000 tokens = 1.7 seconds
+1000 tokens = 3.1 seconds
 }
 
 ```
