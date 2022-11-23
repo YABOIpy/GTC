@@ -11,7 +11,7 @@ star ⭐ For support !
 3. Enjoy
 ```
 
-![goraider](https://user-images.githubusercontent.com/110062350/198759442-50b506ee-3eff-4a67-9d4e-0a74027ac588.gif)
+![NVIDIA_Share_EY4aURacSW](https://user-images.githubusercontent.com/110062350/203573895-d738ac66-01ed-4882-b8b1-6613e32cf882.gif)
 
 
 ```ruby
@@ -21,7 +21,7 @@ Token Joiner With GoRoutines And Works without Proxies
 all tested with 200-300 mpbs
 Speeds = {
 100 tokens = 0.27 seconds
-1000 tokens = 2.9 seconds
+1000 tokens = 1.7 seconds
 }
 
 ```
