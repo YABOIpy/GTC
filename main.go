@@ -8,11 +8,12 @@ import (
 	"gochecker/src"
 )
 
-var (
-	c = source.X()
-)
 
 func main() {
+	var c = source.X()
+	c.Cls()
+	c.Logo()
+	fmt.Scanln()
 	token, err := c.Read_tokens("tokens.txt")
 	c.Errs(err)
 	var wg sync.WaitGroup
