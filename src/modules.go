@@ -1,10 +1,32 @@
 package source
 
 import (
+	"os/exec"
 	"bufio"
+	"fmt"
 	"log"
 	"os"
 )
+
+func (Xc *Checker) Logo() {
+	logo := `
+	___`+z+`__  __`+r+`____`+z+`____________`+r+`___`+z+`_____`+r+`
+	__  `+z+`/ / /`+r+`__  `+z+`____/__  __/`+r+`_  `+z+`____/
+	`+r+`_  `+z+`/ / /`+r+`__  `+z+`/_   `+r+`__  `+z+`/  `+r+`_`+z+`  /     
+	/ /_/ / `+r+`_  `+z+`__/   `+r+`_`+z+`  /   / /___   
+	\____/  /_/      /_/    \____/   
+
+	[`+r+`Go-Token-Checker`+z+`]	
+	
+	`+r+`Press enter to Continue..`
+	fmt.Print(logo)
+}
+
+func (Xc *Checker) Cls() {
+	cmd := exec.Command("cmd", "/c", "cls") 
+	cmd.Stdout = os.Stdout
+	cmd.Run()
+}
 
 
 func (Xc *Checker) Read_tokens(files string) ([]string, error) {
@@ -27,7 +49,6 @@ func (Xc *Checker) OpnFile(file string, token string) {
 	_, ers := f.WriteString(token + "\n")
 	Xc.Errs(ers)
 }
-
 
 func (Xc *Checker) Errs(err error) {
 	if err != nil {
