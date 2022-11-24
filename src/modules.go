@@ -16,7 +16,7 @@ func (Xc *Checker) Logo() {
 	/ /_/ / `+r+`_  `+z+`__/   `+r+`_`+z+`  /   / /___   
 	\____/  /_/      /_/    \____/   
 
-	[`+r+`Go-Token-Checker`+z+`]	
+	[`+r+`Go-Token-Checker`+z+`]		~YABOI#0001
 	
 	`+r+`Press enter to Continue..`
 	fmt.Print(logo)
