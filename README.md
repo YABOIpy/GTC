@@ -16,9 +16,8 @@ star ⭐ For support !
 
 
 ```ruby
-Go Raider
 
-Token Joiner With GoRoutines And Works without Proxies
+
 all tested with 200-300 mpbs
 Speeds = {
 1000 tokens = 1.4 seconds
