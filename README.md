@@ -15,9 +15,10 @@ star ⭐ For support !
 
 
 ```scss
+tested on xeon e5 2697a v4 and 400mbps
 new benchmarks on godm:
-1050 in 314.5ms
-3000 in 810ms
+1050 in 214.5ms
+3000 in 610ms
 ```
 ```ruby
 
