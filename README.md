@@ -14,9 +14,11 @@ star ⭐ For support !
 ![NVIDIA_Share_2l1iAdgZbB](https://user-images.githubusercontent.com/110062350/203656244-88bb929b-5081-4489-8740-55b50eb723e7.gif)
 
 
-
+```scss
+new benchmarks on godm:
+1050 in 314.5ms
+3000 in 810ms
 ```ruby
-
 
 all tested with 200-300 mpbs
 Speeds = {
