@@ -14,7 +14,7 @@ star ⭐ For support !
 ![NVIDIA_Share_2l1iAdgZbB](https://user-images.githubusercontent.com/110062350/203656244-88bb929b-5081-4489-8740-55b50eb723e7.gif)
 
 
-```scss
+```kt
 tested on xeon e5 2697a v4 and 400mbps
 new benchmarks on godm:
 1050 in 214.5ms
