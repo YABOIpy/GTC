@@ -18,6 +18,7 @@ star ⭐ For support !
 new benchmarks on godm:
 1050 in 314.5ms
 3000 in 810ms
+```
 ```ruby
 
 all tested with 200-300 mpbs
