@@ -1,5 +1,5 @@
-# Go-UFTC
-Discord Token Checker Proxyless/Fast
+# GTC
+Go Dicord Token Checker Proxyless/Fast
 
 star ⭐ For support !
 
