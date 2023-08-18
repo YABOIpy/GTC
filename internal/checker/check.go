@@ -3,13 +3,14 @@ package checker
 import (
 	"goftc/internal/utils"
 	"goftc/internal/utils/logger"
+	"io"
 	"log"
 	"time"
 
 	"github.com/bogdanfinn/fhttp"
 )
 
-func (in *Instance) Check() (int, time.Time) {
+func (in *Instance) Check() (int, time.Time, []byte) {
 	s := time.Now()
 	req, err := http.NewRequest("GET",
 		"https://discord.com/api/v9/users/@me/affinities/guilds",
@@ -25,15 +26,19 @@ func (in *Instance) Check() (int, time.Time) {
 		return in.Check()
 	}
 	defer resp.Body.Close()
+	body, _ := io.ReadAll(resp.Body)
 
 	half := utils.HalfToken(in.Token, 0)
-	if resp.StatusCode == 200 {
+	switch resp.StatusCode {
+	case 200:
 		logger.StrlogV("", half, s)
-	} else if resp.StatusCode == 403 {
+	case 403:
 		logger.StrlogR("", half, s)
-	} else {
+	case 400:
+		logger.StrlogR("", half, s)
+	default:
 		logger.StrlogE("", half, s)
 	}
 
-	return resp.StatusCode, s
+	return resp.StatusCode, s, body
 }
