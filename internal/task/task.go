@@ -5,6 +5,7 @@ import (
 	"goftc/internal/checker"
 	"goftc/internal/utils"
 	"os"
+	"strings"
 	"sync/atomic"
 	"time"
 
@@ -32,7 +33,7 @@ func CheckerTask(in []checker.Instance) {
 		wg.Wait()
 		go func(i int) {
 			defer wg.Done()
-			resp, t := c.Check()
+			resp, t, body := c.Check()
 			switch resp {
 			case 200:
 				utils.WriteFile("data/valid.txt", c.Token)
@@ -41,6 +42,16 @@ func CheckerTask(in []checker.Instance) {
 			case 403:
 				utils.WriteFile("data/locked.txt", c.Token)
 				stats.Locked++
+			case 429:
+				utils.WriteFile("data/failed.txt", c.Token)
+				stats.Invalid++
+			case 400:
+				stats.Invalid++
+				if strings.Contains(string(body), "cloudflare") {
+					utils.WriteFile("data/failed.txt", c.Token)
+				} else {
+					utils.WriteFile("data/invalid.txt", c.Token)
+				}
 			default:
 				utils.WriteFile("data/invalid.txt", c.Token)
 				stats.Invalid++
@@ -64,5 +75,5 @@ func CheckerTask(in []checker.Instance) {
 		}
 	}
 	stats = checker.Stats{}
-	time.Sleep(5 *time.Second)
+	time.Sleep(5 * time.Second)
 }
