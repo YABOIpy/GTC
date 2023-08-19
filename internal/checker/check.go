@@ -34,8 +34,6 @@ func (in *Instance) Check() (int, time.Time, []byte) {
 		logger.StrlogV("", half, s)
 	case 403:
 		logger.StrlogR("", half, s)
-	case 400:
-		logger.StrlogR("", half, s)
 	default:
 		logger.StrlogE("", half, s)
 	}
