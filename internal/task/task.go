@@ -17,6 +17,7 @@ func CheckerTask(in []checker.Instance) {
 		"data/valid.txt",
 		"data/locked.txt",
 		"data/invalid.txt",
+		"data/failed.txt"
 	}
 	for i := 0; i < len(f); i++ {
 		os.Truncate(f[i], 0)
